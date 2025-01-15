@@ -9,11 +9,10 @@ window.configure(bg='brown')
 
 def click_button():
 
-    try:
+ try:
         kilo_bilgisi = float(kilo_entry.get())
         boy_bilgisi = float(boy_entry.get())
         bim = kilo_bilgisi / (boy_bilgisi**2)
-
         if bim < 18.4:
             category="Zayıf"
         if 18.5 < bim < 24.9:
@@ -22,7 +21,6 @@ def click_button():
             category="Normalden Kilolu"
         if 40 <= bim:
             category="Obez"
-
         result_label.config(text=f"{category}")
     except:
         result_label.config(text="Lütfen yalnızca sayı giriniz.")
