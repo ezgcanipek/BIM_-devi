@@ -9,11 +9,13 @@ window.configure(bg='brown')
 
 def click_button():
 
- try:
+
+   try:
         kilo_bilgisi = float(kilo_entry.get())
         boy_bilgisi = float(boy_entry.get())
         bim = kilo_bilgisi / (boy_bilgisi**2)
-        if bim < 18.4:
+
+         if bim < 18.4:
             category="Zayıf"
         if 18.5 < bim < 24.9:
             category="Normal"
@@ -21,6 +23,7 @@ def click_button():
             category="Normalden Kilolu"
         if 40 <= bim:
             category="Obez"
+
         result_label.config(text=f"{category}")
     except:
         result_label.config(text="Lütfen yalnızca sayı giriniz.")
@@ -53,6 +56,13 @@ kilo_entry.pack()
 my_button = tkinter.Button(text="Hesapla", command=click_button)
 my_button.config(bg="gray",fg="black")
 my_button.pack(side="top")
+
+result_label = tkinter.Label(text=" ",font=('Arial', 12, "bold"))
+result_label.pack()
+
+
+window.mainloop()
+
 
 result_label = tkinter.Label(text=" ",font=('Arial', 12, "bold"))
 result_label.pack()
